@@ -1,0 +1,41 @@
+# coding: utf-8
+
+import json
+import csv 
+import requests
+
+fichier = "banq.csv"
+i = 0
+
+entete = {
+	"User-Agent":"Tiffany Toussaint",
+	"From":"cg491001@ens.uqam.ca"
+}
+
+for n in range(1000,2001):
+	i += n
+
+	url = "http://collections.banq.qc.ca/api/service-notice?handle=52327/"
+
+	k = str(i)
+	j = url + k 
+	m = j.strip( )
+
+	req = requests.get(m,headers=entete)
+
+	print(req)
+
+	for music in req : 
+		if "audio" in req :
+		
+			infos = []
+
+			infos.append(music["titre : "	])
+			infos.append(music["interprété par"])
+
+			for music in annee.values():
+				infos.append(music["annee"])
+
+				infos.append(description["lien"])
+				print(infos)
+				i -= n
